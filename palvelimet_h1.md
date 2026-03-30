@@ -45,3 +45,19 @@ Kopioin SSH-avaimeni localhostille komennolla ```ssh-copy-id localhost``` ja kok
 
 <img width="563" height="254" alt="image" src="https://github.com/user-attachments/assets/9b7f71be-ffc1-488d-847e-39fef3a20316" />
 
+Ja näin salasanaa ei enää sisäänkirjautuessa localhostille SSH:n yli tarvita. 
+
+#### C) Hei Ansible 
+
+Asensin seuraavaksi Ansiblen komennolla ```sudo apt install ansible -y``` ja loin hakemiston ```/ansibles``` komennolla ```mkdir ansibles```. 
+
+Siirryin luomaani hakemistoon ja loin siellä uuden tiedoston ```hosts.ini``` käyttämällä komentoa ```micro hosts.ini```. Tajusin heti painettuani Enteria, että eihän tässä koneessa varmasti ole microa asennettuna, mutta yllätyinkin positiivisesti huomatessani, että no onhan se!
+
+<img width="233" height="33" alt="image" src="https://github.com/user-attachments/assets/7a6b90cd-3648-4fb0-aa3d-86eb36f63086" />
+
+Kirjoitin tunnilla nähdyn sisällön tiedostoon Microlla
+
+```
+[web]
+juho@localhost
+```
