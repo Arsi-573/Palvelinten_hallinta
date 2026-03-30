@@ -33,3 +33,15 @@ Tämän jälkeen ajattelin vielä testata, että kirjaus on takuulla toiminut jo
 
 #### B) Pubkey
 
+Aloitin luomalla avainparin komennolla ```ssh-keygen``` ja löin enteriä kolmesti.
+
+<img width="423" height="232" alt="image" src="https://github.com/user-attachments/assets/2c27aa07-b256-4264-a583-e38f33b737d0" />
+
+Ajattelin käydä katsomassa, että avain tuli luotua joten käytin komentoa ```cat ~/.ssh/id_ed25519.pub``` ja sain julkisen avaimeni näin tulostettua terminaaliin.
+
+<img width="502" height="23" alt="image" src="https://github.com/user-attachments/assets/ac757991-ad6b-4fb4-bd7c-2decaf391333" />
+
+Kopioin SSH-avaimeni localhostille komennolla ```ssh-copy-id localhost``` ja kokeilin tämän jälkeen (myös terminaalin kehotuksesta) kirjautua sisään localhostiin komennolla ```ssh localhost```. 
+
+<img width="563" height="254" alt="image" src="https://github.com/user-attachments/assets/9b7f71be-ffc1-488d-847e-39fef3a20316" />
+
