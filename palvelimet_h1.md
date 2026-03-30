@@ -61,3 +61,43 @@ Kirjoitin tunnilla nähdyn sisällön tiedostoon Microlla
 [web]
 juho@localhost
 ```
+
+Tämän jälkeen loin seuraavaksi tiedoston ```site.yml``` microlla ja täytin sen tunnilla nähdyllä tavalla
+
+<img width="101" height="43" alt="image" src="https://github.com/user-attachments/assets/c371c2f1-0e08-4331-b5b6-28620b7536bc" />
+
+Kokeilin tämän jälkeen, että olen oikeilla jäljillä, joten syötin tunnilla käydyt komennot ```head *``` ja ```ansible-playbook site.yml```. Lopputulos vastasi oppitunnilla näkemiäni virheviestejä, joten ajattelin, että tässä vaiheessa ei kannata huolestua!
+
+<img width="563" height="244" alt="image" src="https://github.com/user-attachments/assets/dcbbc53e-c5b8-4237-b560-4d37efe5db25" />
+
+Katsoin ensin hakemiston ansibles sisällön siinä ollessani ```ls -F```, ja tein tämän jälkeen sinne kansion ```roles``` komennolla ```mkdir roles``` ja tarkistin uudestaan, että tällä kertaa se myös löytyy hakemiston alta syöttämällä uudestaan ```ls -F```. 
+
+<img width="155" height="45" alt="image" src="https://github.com/user-attachments/assets/3b342968-ed4a-4a47-9fe3-b6c8b04d68a3" />
+
+Tämän jälkeen loin microlla tiedoston käyttämällä komentoa ```micro roles/hello/tasks/main.yml``` ja syötin sinne tunnilla nähdyn sisällön.
+
+<img width="201" height="26" alt="image" src="https://github.com/user-attachments/assets/0cd90556-3642-4492-bfe6-21e8c8930884" />
+
+Tallensin ja suljin tiedoston ja kokeilin tämän jälkeen jälleen, olenko oikeilla jäjillä komennolla ```ansible-playbook site.yml -i hosts.ini```. Virhetekstit vastasivat samaan aikaan tunnilla nähtyjä, joten päättelin jälleen olevani vielä toistaiseksi oikeilla jäljillä.
+
+<img width="563" height="170" alt="image" src="https://github.com/user-attachments/assets/0a98526d-3d8f-46dc-a377-33c021f909cb" />
+
+Seuraavaksi tuli siis saada tämä kysymään salasanaani, joten käytin komentoa ```ansible-playbook site.yml -i hosts.ini --ask-become-pass```, ja syötin salasanani. Tulosti näytti kohdassa ```PLAY RECAP```, että yksi muutos on tehty, joten tässäkin kohtaa olin mielestäni edelleen oikeilla jäljillä.
+
+<img width="562" height="197" alt="image" src="https://github.com/user-attachments/assets/14988071-674d-4f97-b2cc-a347f5e64bed" />
+
+Kirjauduin seuraavaksi localhostille SSH:lla, siirryin hakemistoon ```/tmp``` katsoin sen sisällön ```ls``` ja syötin tämän jälkeen ```cat hello-ansible```. Lopputuloksena sain tulosteen viimeisimpänä luodun tiedoston Content- kohdasta ```Heippa Ansiblen maailma!``` 
+
+<img width="501" height="275" alt="image" src="https://github.com/user-attachments/assets/fbd8ef0e-cd5a-45d6-b879-f53b93c77a64" />
+
+Totesin, että kaikki toimii, kuten pitääkin ja meni tunnilla käytyjen oppien mukaan mukavan helposti. Lopuksi suljin yhteyden komennolla ```exit```.
+
+### Lähteet
+
+https://terokarvinen.com/palvelinten-hallinta/#h1-hei-ansiblen-maailma
+
+https://terokarvinen.com/ssh-public-key-login-without-password/
+
+https://terokarvinen.com/hello-ansible/
+
+Oma tunnilla käyttämä toinen virtuaalikone toimi myös hyvänä lähteenä! 
