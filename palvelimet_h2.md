@@ -46,8 +46,7 @@ Kokeilin tämän jälkeen toimiiko sudo ilman salasanaa käyttäjällä ansjuho 
 <img width="566" height="209" alt="image" src="https://github.com/user-attachments/assets/42892103-d4f2-4f6a-be13-e81f373c1b92" />
 
 #### B) Tunnuksen luonti Ansiblella
-###### Tehtävänanto: 
-Tee salasanaton, automaattisesti ssh:lla kirjautuva tunnus Ansiblella.
+###### Tehtävänanto: Tee salasanaton, automaattisesti ssh:lla kirjautuva tunnus Ansiblella.
 
 Aloitin luomalla tehtävänannon mukaisen hakimiston käyttäjällä ansjuho, käyttäen komentoa ```mkdir ansible.cfg``` ja sen alla ```mkdir -p roles/ansjuho/tasks``` ja vielä ```touch hosts.ini site.yml roles/ansjuho/tasks/main.yml```. Lisäksi tein vielä ```mkdir -p roles/world/tasks``` ja ```touch roles/world/tasks/main.yml```. Katsoin lopuksi hakemiston komennolla ```tree -F``` käyttäjän korihakemistossa ja huomasin, että nythän tuli tehtyä hölmösti, kun kaikki tekemäni hakemistot ja tiedostot oli menneet ```ansible.cfg/```- hakemiston alle. 
 
@@ -96,8 +95,7 @@ Kokeilin jälleen uudelleen ```ansible-playbook -i hosts.ini site.yml --ask-beco
 <img width="598" height="285" alt="image" src="https://github.com/user-attachments/assets/60c27afa-5538-40d9-8828-0908242a4f21" />
 
 #### C) Pakettien asennus
-###### Tehtävänanto:
-Asenna kaksi pakettia ansiblella.
+###### Tehtävänanto: Asenna kaksi pakettia ansiblella.
 
 Oman muistin mukaan pakettien asennusta ei oltu vielä ehditty tunneilla käydä tarkemmin läpi, mutta päätin kuitenkin tarttua tehtävään. Skriptit tulee siis lisätä main.yml- tiedostoon, joten avasin sen ```micro roles/ansjuho/tasks/main.yml```. Ajattelin, että ainakin Micro ja Curl on hyvä löytyä aina joka koneelta, niin lisäsin ne skriptiin ja laitoin loppuun vielä ```update-cache: yes```, jotta asennuksessa haetaan aina uusin saatavilla oleva versio asennettavosta ohjelmista. 
 
@@ -108,8 +106,7 @@ Ajoin tämän jälkeen testin ```ansible-playbook -i hosts.ini site.yml -K``` ja
 <img width="541" height="255" alt="image" src="https://github.com/user-attachments/assets/dcc72c33-36cf-4f79-9694-85fdebd48215" />
 
 #### D) Tiedoston kirjoitus Ansiblella
-###### Tehtävänanto:
-Kirjoita orjalle useamman rivin mittainen tiedosto Ansiblella. Määrittele sen omistaja, omistava ryhmä ja oikeudet. Käytä oikeuksille oktaalinumeroa, esim. "0600". Kerro, mitä oikeudet ovat symbolisessa muodossa, esim. "-rwxr--r--". Selitä, mitä kukin käyttäjä saa tehdä tuolle tiedostolle.
+###### Tehtävänanto: Kirjoita orjalle useamman rivin mittainen tiedosto Ansiblella. Määrittele sen omistaja, omistava ryhmä ja oikeudet. Käytä oikeuksille oktaalinumeroa, esim. "0600". Kerro, mitä oikeudet ovat symbolisessa muodossa, esim. "-rwxr--r--". Selitä, mitä kukin käyttäjä saa tehdä tuolle tiedostolle.
 
 Tämä tehdään samalla tavalla ```main.yml```- tiedostoon lisäämällä sitä varten teksti aikaisempien muutosten jälkeen. Avataan siis tiedosto klikkaamalla kahdesti näppäimistössä ylöspäin, jotta komento ```micro roles/ansjuho/tasks/main.yml``` tulee näkyviin ja ryhdytään työstämään iskemällä Enter. 
 
@@ -124,8 +121,7 @@ Tämän jälkeen jällein ajoin ```ansible-playbook -i hosts.ini site.yml -K```,
 <img width="509" height="25" alt="image" src="https://github.com/user-attachments/assets/15f502d8-df0c-420c-a90e-11f368b5fa16" />
 
 #### E) Jotain muuta
-###### Tehtävänanto:
-Näytä esimerkki ansiblen käskystä, jota ei ole vielä käsitelty kurssilla tai kotitehtävissä. Voit ottaa jonkun muun modulin kuin apt, file, copy, user tai authorized_key. Tai voit käyttää ominaisuutta, jota ei vielä ole demonstroitu. Jos tiivistystehtävässä x on mainittu ominaisuuksia, joita ei tunneilla tai läksyissä kokeiltu, nekin kelpaavat.
+###### Tehtävänanto: Näytä esimerkki ansiblen käskystä, jota ei ole vielä käsitelty kurssilla tai kotitehtävissä. Voit ottaa jonkun muun modulin kuin apt, file, copy, user tai authorized_key. Tai voit käyttää ominaisuutta, jota ei vielä ole demonstroitu. Jos tiivistystehtävässä x on mainittu ominaisuuksia, joita ei tunneilla tai läksyissä kokeiltu, nekin kelpaavat.
 
 Ajattelin, että ensiksi olisi tosiaan hyvä valita jokin suhteellisen hyödyllinen moduuli, joten ajattelin, että käyttäisin sitten Network moduulia (inspiraatiota haettu: https://www.geeksforgeeks.org/devops/ansible-module/). Lisätään siis taas ```main.yml``` tiedostoon jatkoa avaamalla se ```micro roles/ansjuho/tasks/main.yml```. 
 
