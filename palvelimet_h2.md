@@ -27,6 +27,7 @@ Oma huomio: Automaatiolla eliminoidaan näppäily- ja kirjoitusvirheitä, niin s
 - ansible-doc authorized_key: Lisää tai poistaa SSH- avaimia käyttäjille.
 
 #### A) Sudoless
-Tehtävänanto: Tee ansiblea varten tunnus, jolla voi käyttää sudoa ilman salasanaa. Sekä ssh-kirjautuminen että sudon käyttö tulee olla ansbilea varten automatisoitu.
+###### Tehtävänanto: 
+Tee ansiblea varten tunnus, jolla voi käyttää sudoa ilman salasanaa. Sekä ssh-kirjautuminen että sudon käyttö tulee olla ansbilea varten automatisoitu.
 
 
