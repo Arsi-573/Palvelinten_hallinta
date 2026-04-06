@@ -27,8 +27,7 @@ Oma huomio: Automaatiolla eliminoidaan näppäily- ja kirjoitusvirheitä, niin s
 - ansible-doc authorized_key: Lisää tai poistaa SSH- avaimia käyttäjille.
 
 #### A) Sudoless
-###### Tehtävänanto: 
-Tee ansiblea varten tunnus, jolla voi käyttää sudoa ilman salasanaa. Sekä ssh-kirjautuminen että sudon käyttö tulee olla ansbilea varten automatisoitu.
+###### Tehtävänanto: Tee ansiblea varten tunnus, jolla voi käyttää sudoa ilman salasanaa. Sekä ssh-kirjautuminen että sudon käyttö tulee olla ansbilea varten automatisoitu.
 
 Aloitin luomalla käyttäjän ```sudo adduser ansjuho```, täyttämällä salasanan kahdesti ja jäötin muut kohdat käyttäjäluonnissa tyhjäksi. Tämän jälkeen vielä loin ryhmän ```sudo groupadd sudoless``` ja lisäsin käyttäjän ansjuho ryhmään ```sudo adduser ansjuho sudoless```. Kirjoitin aluksi käyttäjänimen väärin juhoans, joka näkyy kuvassa, mutta terminaali osasi huomauttaa tästä virheestä.
 
