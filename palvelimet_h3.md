@@ -1,7 +1,8 @@
 # h3 Demoni
 
 #### X) Tiivistelmät materiaaleista
-##### Apache installed with Ansible - quick notes https://terokarvinen.com/palvelinten-hallinta/#laksyt
+##### Apache installed with Ansible - quick notes 
+https://terokarvinen.com/palvelinten-hallinta/#laksyt
 - Package-File-Service-malli: Eli lyhyehkösti selitettynä: ensin asennetaan, sitten muokataan konfiguraatiotiedostoja ja lopuksi käynnistetään. 
 - Ansiblen roolitus pitää huolen suoritettavista tehtävistä ja pitää ne erillään.
 - Esim. Abache2:n kohdalla roolit voidaan jakaa kolmeen osaan:
