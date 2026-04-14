@@ -85,6 +85,30 @@ Asensin sitten NginX:n ja unohdin tietysti laittaa komennon loppuun ```-y```, jo
 
 <img width="479" height="200" alt="image" src="https://github.com/user-attachments/assets/d0613dc2-12a4-4de3-8da6-be5bcd5c10f4" />
 
+Seuraavaksi tein kansion ```home/ansjuho/nginxtesti.com/``` ja sinne tiedoston ```index.html``` sudoilla ja kirjoitin microlla sivuston sisällön. 
+
+<img width="500" height="29" alt="image" src="https://github.com/user-attachments/assets/dd806630-3517-4984-9897-5b9760916e2b" />
+
+<img width="309" height="149" alt="image" src="https://github.com/user-attachments/assets/6f3bb137-aec3-4aea-ab97-41a37a4cfbbd" />
+
+Muutin seuraavaksi oikeudet luettavaksi ja muokattavaksi.
+
+<img width="569" height="59" alt="image" src="https://github.com/user-attachments/assets/0dda7802-e443-4fc0-b176-bbaf01c521c3" />
+
+Seuraavaksi sudotin tiedoston siirron enginx:n hakemistoon ja otin default- sivun pois käytöstä. Laitoin enginx:n käynnistymään uudelleen ja siirryin kokeilemaan toimiiko sivu selaimessa.
+
+<img width="632" height="74" alt="image" src="https://github.com/user-attachments/assets/b119a0f7-5114-411f-bfb1-e427d4c310a4" />
+
+<img width="637" height="132" alt="image" src="https://github.com/user-attachments/assets/54b07d2c-e74d-45e4-b4c1-45f50ada1bb2" />
+
+Harmillista. Siirryin siis selvittelemään error logia, joka ilokseni on vastaava kun apachellakin.
+
+<img width="565" height="29" alt="image" src="https://github.com/user-attachments/assets/5556cbc1-d267-452d-b66a-39706ea0ae41" />
+
+Tämä kyseinen viesti kertoi tasan 0 asiaa, joista olisi itse ymmärtänyt sitten mitään, joten kysyin Geminin keinoälykkyydeltä, että missä vika mahtaa piillä. Vastaukseksi sain epäilyn, että tiedosto ei löydy oikeaan paikkaan, tai polku on viallisesti merkattu. Tästä epäilystä hieman rohkaistuneena avasin ```ansjuho-nginx```- tiedoston tarkempaa tarkkailua varten, ja huomasin, että polku oli tosiaan kuin kännisen kirjoitusta, niin muutin sen sitten tolkulliseksi.
+
+<img width="362" height="200" alt="image" src="https://github.com/user-attachments/assets/ba4950ad-2e00-4a09-9f87-e3ae1071bee7" />
+
 
 
 ### Lähteet
