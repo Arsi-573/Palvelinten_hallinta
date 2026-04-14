@@ -105,10 +105,37 @@ Harmillista. Siirryin siis selvittelemään error logia, joka ilokseni on vastaa
 
 <img width="565" height="29" alt="image" src="https://github.com/user-attachments/assets/5556cbc1-d267-452d-b66a-39706ea0ae41" />
 
-Tämä kyseinen viesti kertoi tasan 0 asiaa, joista olisi itse ymmärtänyt sitten mitään, joten kysyin Geminin keinoälykkyydeltä, että missä vika mahtaa piillä. Vastaukseksi sain epäilyn, että tiedosto ei löydy oikeaan paikkaan, tai polku on viallisesti merkattu. Tästä epäilystä hieman rohkaistuneena avasin ```ansjuho-nginx```- tiedoston tarkempaa tarkkailua varten, ja huomasin, että polku oli tosiaan kuin kännisen kirjoitusta, niin muutin sen sitten tolkulliseksi.
+Tämä kyseinen viesti kertoi tasan 0 asiaa, joista olisi itse ymmärtänyt sitten mitään, joten kysyin Geminin keinoälykkyydeltä, että missä vika mahtaa piillä. Vastaukseksi sain epäilyn, että tiedosto ei löydy oikeaan paikkaan, tai polku on viallisesti merkattu. Tästä epäilystä hieman rohkaistuneena avasin ```ansjuho-nginx```- tiedoston jonka olin unohtanut tehdä aikaisemmin ja kirjoitin sinne oikeat värssyt.
 
-<img width="362" height="200" alt="image" src="https://github.com/user-attachments/assets/ba4950ad-2e00-4a09-9f87-e3ae1071bee7" />
+<img width="362" height="200" alt="image" src="https://github.com/user-attachments/assets/fb918aba-c958-49ce-8571-c987603ae22f" />
 
+Tämän jälkeen taas käynnistelin nginx:n uudestaan ja kokeilin toimiiko sivu - ei toiminut. Aloin epäillä, että olikohan tuo tiedostopolku aivan oikein, joten tarkistin komennot klikkaamalla ylös, ja olin tosiaan painanut tuon tiedoston kotihakemistoon, joten siirsin sen vielä ```/etc/nginx/sites-available/ansjuho-nginx```. Kokeilin tämän jälkeen vielä käynnistää nginx:n uusiksi ja päivittää sivun. 
+
+Tämä tepsi ja sivukin toimi.
+
+<img width="203" height="103" alt="image" src="https://github.com/user-attachments/assets/8e8b48db-39fd-44d9-a5aa-f1a38b4a83c1" />
+
+#### C) Automoottorix
+###### Automatisoi Nginx asennus Ansiblella. Ylläpitäjän osuus Ansiblella riittää, itse HTML-weppisivut voi tehdä käsin.
+Aloitin luomalla oikeat polut hakemistoon.
+
+<img width="320" height="288" alt="image" src="https://github.com/user-attachments/assets/67c6abf9-ea11-4b4e-89d3-aab39247f32f" />
+
+Tein ```tasks/main.yml```- tiedoston ja laitoin sinne Teron ohjeiden mukaisen sisällön mikä vastaa nginx:ää.
+
+<img width="377" height="301" alt="image" src="https://github.com/user-attachments/assets/c7bf59ac-3d64-4948-8638-c9ad71000650" />
+
+Seuraavaksi rupesin työstämään handlereita main.yml- skriptille tekemällä ensin ```nginx```- kansion alle uuden kansion ```handlers``` ja sinne tiedoston main.yml. Kirjoitin sisällön kuvan mukaiseksi.
+
+<img width="164" height="49" alt="image" src="https://github.com/user-attachments/assets/08402953-c9cd-4edc-a23e-3200776630a2" />
+
+Tässä vaiheessa ```nginx```- hakemisto näytti tältä:
+
+<img width="234" height="98" alt="image" src="https://github.com/user-attachments/assets/efe0a4ee-3db2-42c9-afd0-c66d805c97c2" />
+
+Ajoin tämän jälkeen ansiblen playbookin ja heitin loppuun vielä ```curl localhost```. Kaikki siis tältä erää OK. 
+
+<img width="634" height="189" alt="image" src="https://github.com/user-attachments/assets/3c9daf98-138c-498c-9ec2-1551e10138eb" />
 
 
 ### Lähteet
@@ -119,3 +146,4 @@ https://terokarvinen.com/apache-ansible/
 
 https://docs.ansible.com/projects/ansible/latest/playbook_guide/playbooks_handlers.html
 
+Google Gemini LLM käytetty ongelmanratkaisussa apuna löytämään virheitä omista tekemisistä esim. tiedostojen sijainnin kanssa. 
