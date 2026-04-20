@@ -161,7 +161,7 @@ Caddy näyttää poistuneen keskuudestamme, joten ajoin playbookkia uudestaan ja
 
 <img width="519" height="152" alt="image" src="https://github.com/user-attachments/assets/443c1421-33c2-4d20-b841-1aeb321d4e80" />
 
-#### D) Idempotentti.
+#### E) Idempotentti.
 ###### Tehtävänanto:  Osoita, että tilasi on idempotentti.
 Koska olin edellisessä kohdassa juuri ajanut playbookin kertaalleen, ajoin sen idempotenssin osoitukseksi kertaalleen uudistaan ja katsoin, että kaikki kohdat on vihreällä ja OK. 
 
