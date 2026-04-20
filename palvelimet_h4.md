@@ -115,6 +115,7 @@ Tein ensin tätä varten hakemiston ```roles/caddy/files```, jonne loin vielä t
 
 <img width="172" height="113" alt="image" src="https://github.com/user-attachments/assets/8bcba240-3954-444d-b547-f7f340055c02" />
 
+
 <img width="345" height="40" alt="image" src="https://github.com/user-attachments/assets/cfd044e1-3347-4beb-817c-daad476867f8" />
 
 Seuraavaksi tein handlereille oman hakemiston ja sinne oman ```main.yml``` tiedoston, niin saadaan Caddy uudelleen käynnistettyä, jos jokin on muuttunut. 
@@ -125,5 +126,54 @@ micro roles/caddy/handlers/main.yml
 
 <img width="170" height="137" alt="image" src="https://github.com/user-attachments/assets/5d71454f-81a8-4491-a666-44e14f6d97af" />
 
+
 <img width="188" height="49" alt="image" src="https://github.com/user-attachments/assets/8a0ff2c2-f4d4-4597-81d7-39ac27a29d01" />
 
+Seuraavaksi tuli lisätä tasksiin tämä uusi handlerikin tulee ottaa sitten playbookissa huomioon, niin avasin ```tasks/main.yml``` uudelleen ja lisäsin sinne alla näkyvän pätkän muiden jatkoksi.
+
+<img width="239" height="101" alt="image" src="https://github.com/user-attachments/assets/78af6869-e279-438c-8247-ddfde7b31610" />
+
+Tallensin ja suljin tiedoston ja ajoin playbookin uudelleen testatakseni.
+
+<img width="520" height="233" alt="image" src="https://github.com/user-attachments/assets/d9659009-9475-45c8-b2e9-8e7ad41afec4" />
+
+Sekä Caddyfilen kopiointi, että caddyn restartti näytti muuttuneen. Ajoin vielä testausmielessä ```curl localhost``` ja sain aikaisemmin Caffyfileen lisätyn tekstin.
+
+<img width="234" height="23" alt="image" src="https://github.com/user-attachments/assets/9865d35e-f833-4f12-b91f-3be5c18efa6c" />
+
+Uusi kierros playbookkia ei muuttanut enää mitään, joten totesin homman toimivaksi. 
+
+#### D) Paikka remonttiin.
+###### Tehtävänanto: Riko jotain asetuksia. Voit esimerkiksi poistaa demonin 'sudo apt-get purge foobar' (purge poistaa myös asetustiedostoja), poistaa asennuksen yhteydessä tulevan kansion (sudo rm -r /etc/foobar/ # vaarallista) tms. Ja sitten ajaa ansible-roolisi uudestaan ja todeta, että se korjaa tilanteen.
+Ajoin tehtävänannossa ohjeistetusti
+````
+sudo apt-get purge caddy -y
+````
+
+Ja katsoin vielä varmuudeksi statuksen
+````
+sudo systemctl status caddy
+````
+
+<img width="499" height="224" alt="image" src="https://github.com/user-attachments/assets/4cfbb945-8b2a-42d2-b095-7426788f6f32" />
+
+Caddy näyttää poistuneen keskuudestamme, joten ajoin playbookkia uudestaan ja sain odotetusti ```caddyn asennus```- kohdassa ```changed: [localhost]```, eli asennus oli siis tehty. Ajoin uudestaan ```sudo systemctl status caddy```, niin sain vielä varmuuden, että caddy on käynnissä ja toimii. 
+
+<img width="519" height="152" alt="image" src="https://github.com/user-attachments/assets/443c1421-33c2-4d20-b841-1aeb321d4e80" />
+
+#### D) Idempotentti.
+###### Tehtävänanto:  Osoita, että tilasi on idempotentti.
+Koska olin edellisessä kohdassa juuri ajanut playbookin kertaalleen, ajoin sen idempotenssin osoitukseksi kertaalleen uudistaan ja katsoin, että kaikki kohdat on vihreällä ja OK. 
+
+Kuvassa meni teksti hieman pieneksi, mutta tarkkasilmäinen huomannee, ettei vihreän lisäksi ole kuin python3:n räikeän violetti varoitusteksti.
+
+<img width="274" height="340" alt="image" src="https://github.com/user-attachments/assets/5a1b4fd0-4bb4-47be-867a-72cb0c2fff25" />
+
+
+### Lähteet
+
+https://terokarvinen.com/palvelinten-hallinta/#laksyt
+
+Karvinen 2023: Configuration Management of Distributed Systems over Unreliable and Hostile Networks
+
+Googlen Gemini LLM käytetty apuna microlla tehtävien tiedostojen täyttämiseen.
