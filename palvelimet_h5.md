@@ -217,3 +217,31 @@ Tällä kertaa push ei sitten onnistunutkaan, kun olin ihan tyystin unohtanut yh
 <img width="516" height="137" alt="image" src="https://github.com/user-attachments/assets/d29ef30b-7e77-4728-9b2b-95ec135b9afa" />
 
 Tilanteen saa onneksi korjattua nopeasti luomalla uuden repon Codebergiin nimellä "Ansibles". 
+
+<img width="320" height="334" alt="image" src="https://github.com/user-attachments/assets/8742c2c7-bd22-43bd-b741-023f662eb39a" />
+
+Tämän jälkeen ajoin ansible- kansiossa
+````
+git remote add origin git@codeberg.org:Juissi/Ansibles.git
+````
+
+Tämän jälkeen puskin läpi komennolla 
+````
+git push -u origin main
+````
+
+<img width="410" height="125" alt="image" src="https://github.com/user-attachments/assets/783203ae-2571-47c9-80d4-3bbfb6740c0d" />
+
+Ja tarkastin lopuksi vielä, että kaikki sisältö löytyi varmasti myös webbiselaimesta
+
+<img width="512" height="206" alt="image" src="https://github.com/user-attachments/assets/fec575a9-15f4-4854-9fbf-b6de68c961a9" />
+
+### Lähteet
+
+https://terokarvinen.com/palvelinten-hallinta/#laksyt
+
+Chacon and Straub 2014: Pro Git, 2ed: 1.3 Getting Started - What is Git? https://git-scm.com/book/en/v2/Getting-Started-What-is-Git%3F
+
+Git Cheat Sheet https://git-scm.com/cheat-sheet 
+
+Googlen Gemini LLM käytetty apuna kirjoittamaan sisältöä ansiblen osalta, sekä virheiden tarkastuksessa. 
